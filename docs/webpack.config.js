@@ -10,7 +10,7 @@ module.exports = function (env) {
     const entryFile = aotMode ? 'bootstrap.aot.ts' : 'bootstrap.ts';
     const outPath = prodMode ? 'dist' : 'build';
     const devtool = prodMode ? 'source-map' : 'eval-source-map';
-    const srcPath = path.join(__dirname, 'src');
+    const srcPath = path.join(dirname, 'src');
 
     let config = {
         target: 'web',
@@ -28,7 +28,7 @@ module.exports = function (env) {
             modules: [path.join(srcPath, '../node_modules')]
         },
         output: {
-            path: path.join(__dirname, '..', 'docs', outPath),
+            path: path.join(dirname, '..', 'docs', outPath),
             publicPath: '',
             filename: '[name].js',
             pathinfo: true
